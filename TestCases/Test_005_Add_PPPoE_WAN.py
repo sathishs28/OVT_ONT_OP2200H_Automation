@@ -7,7 +7,7 @@ from PageObjects.WAN_Page import WAN_Page
 snap_path = "./ScreenShots/"
 
 
-class Test_005_add_New_WAN:
+class Test_005_Add_PPPoE_WAN:
     device_URL = ReadConfig.get_device_url()
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
@@ -18,7 +18,7 @@ class Test_005_add_New_WAN:
         self.driver = setup
         self.driver.get(self.device_URL)
         try:
-            logger.info("********************* Test_005_add_New_WAN :: 3-test_add_pppoe_wan *********************")
+            logger.info("********************* Test_005_Add_PPPoE_WAN :: 3-test_add_pppoe_wan *********************")
             logger.info("******* test_add_pppoe_wan Test case is started & Verifying *******")
             # Login Device
             self.lp = LoginPage(self.driver)
