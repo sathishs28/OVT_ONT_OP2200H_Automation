@@ -33,12 +33,13 @@ Step 3. Install Project Dependencies:
     pip install -r requirements.txt
 
 Step 4. Run Your Python Project:
-    Edit and run -> run.bat  (Open the run.bat -> It's run automatically)
+    Edit and run -> run.bat (Open the run.bat -> It's run automatically)
 
     1. Before run the automation "run.bat" configure the project and device details in Configuration (folder) - config.ini
     2. Set the marks desired test cases (from each module - test cases)
     3. After run the run.bat file with specified single cmd (there have multiple cmds based on the project test cases).
 
+Step 5: Finally, the Automation test result verifies in Reports & Logs
 
 
 

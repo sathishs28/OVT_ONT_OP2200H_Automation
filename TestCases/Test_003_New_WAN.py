@@ -98,7 +98,7 @@ class Test_003_New_WAN:
         except Exception as e1:
             self.driver.save_screenshot(snap_path + "test_add_bridge_wan_issue.png")
             logger.error("************** test_add_bridge_wan Test case is stopped - Webpage is not loaded ("
-                           "Refer belo logs**************")
+                         "Refer belo logs**************")
             logger.error(f"Page load failed: {str(e1)}")
             self.driver.switch_to.default_content()
             self.lp.click_logout()
@@ -191,7 +191,7 @@ class Test_003_New_WAN:
         except Exception as e1:
             self.driver.save_screenshot(snap_path + "test_add_ipoe_wan_issue.png")
             logger.error("************** test_add_ipoe_wan Test case is stopped - Webpage is not loaded ("
-                           "Refer belo logs**************")
+                         "Refer belo logs**************")
             logger.error(f"Page load failed: {str(e1)}")
             self.driver.switch_to.default_content()
             self.lp.click_logout()
@@ -271,7 +271,7 @@ class Test_003_New_WAN:
         except Exception as e1:
             self.driver.save_screenshot(snap_path + "test_add_pppoe_wan_issue.png")
             logger.error("************** test_add_pppoe_wan Test case is stopped - Webpage is not loaded, "
-                           "Refer belo logs**************")
+                         "Refer belo logs**************")
             logger.error(f"Page load failed: {str(e1)}")
             self.driver.switch_to.default_content()
             self.lp.click_logout()
