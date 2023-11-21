@@ -18,21 +18,21 @@ def setup(browser):
         # logger.info("******* Test Cases are testing under Chrome Browser *******")
     elif browser == "firefox":
         driver = webdriver.Firefox()
-        driver.implicitly_wait(10)  # Implicitly wait time is 10 sec
+        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
         driver.maximize_window()
         print("\n" "##### Firefox Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under Firefox Browser *******")
     elif browser == "edge":
         driver = webdriver.Edge()
-        driver.implicitly_wait(10)  # Implicitly wait time is 10 sec
+        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
         driver.maximize_window()
         print("\n" "##### Microsoft Edge Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under Firefox Browser *******")
     else:
-        driver = webdriver.Chrome()
-        driver.implicitly_wait(10)  # Implicitly wait time is 10 sec
+        driver = webdriver.Edge()
+        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
         driver.maximize_window()
-        print("\n" "##### Default - Chrome Browser is launching.....#####")
+        print("\n" "##### Default - Edge Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under IE (Default) *******")
     return driver
 
