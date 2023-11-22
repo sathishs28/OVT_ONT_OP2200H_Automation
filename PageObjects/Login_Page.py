@@ -8,6 +8,7 @@ class LoginPage:
     Click_Login_Button_XPATH = "//input[@name='save']"
     Click_Logout_Button_XPATH = "//input[@value='Logout']"
     Login_Error_Message_XPATH = "/html/body/blockquote/table/tbody/tr[1]/td/h4"
+    CLICK_AF_LOGOUT_OK_BTN_XPATH = "//input[@type='button']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -42,3 +43,6 @@ class LoginPage:
         self.set_username(username)
         self.set_password(password)
         self.click_login()
+
+    def click_af_logout_ok_btn(self):
+        self.driver.find_element(By.XPATH, self.CLICK_AF_LOGOUT_OK_BTN_XPATH).click()

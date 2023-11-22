@@ -97,7 +97,3 @@ class Test_004_Delete_WAN:
             self.lp.click_logout()
             self.driver.close()
             assert False
-
-    @pytest.mark.Testing
-    def test_log(self, logger):
-        logger.error("******** Testing Sample log ********")
