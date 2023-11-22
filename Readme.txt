@@ -12,10 +12,10 @@ Requirement:
 
 *** For Fresh Setup in New PC ***
 
-Step 1. Share Your Code and install Python V3.11 or higher version
+Step 1. Share Your Code and install Python V3.11 or a higher version
     1. https://github.com/sathishs28/OVT_ONT_OP2200H_Automation.git
 
-    2. And install the Python V3.11 or higher version
+    2. And install the Python V3.11 or higher version - https://www.python.org/downloads/
 
 Step 2. Set Up a Virtual Environment:
     1. Open a terminal or command prompt on the other PC.
