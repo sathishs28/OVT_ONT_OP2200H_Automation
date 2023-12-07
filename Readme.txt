@@ -12,10 +12,13 @@ Requirement:
 
 *** For Fresh Setup in New PC ***
 
-Step 1. Share Your Code and install Python V3.11 or a higher version
+Step 1. Share Your Code and install Python V3.11 or a higher version & Chrome Webdriver
     1. https://github.com/sathishs28/OVT_ONT_OP2200H_Automation.git
 
     2. And install the Python V3.11 or higher version - https://www.python.org/downloads/
+
+    3. Download chrome webdriver with the latest version of currently running chrome in your PC
+        Refer & Download link - https://chromedriver.chromium.org/downloads
 
 Step 2. Set Up a Virtual Environment:
     1. Open a terminal or command prompt on the other PC.
@@ -40,7 +43,3 @@ Step 4. Run Your Python Project:
     3. After run the run.bat file with specified single cmd (there have multiple cmds based on the project test cases).
 
 Step 5: Finally, the Automation test result verifies in Reports & Logs
-
-
-
-
