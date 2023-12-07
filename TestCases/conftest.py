@@ -1,36 +1,73 @@
+import os
 import pytest
 import logging
-import os
-from selenium import webdriver
 from datetime import datetime
+from selenium import webdriver
 from pytest_metadata.plugin import metadata_key
 from Utilities.ReadProperties import ReadConfig
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
+
+
+download_dir_relative = "./Backups/"
+download_dir = os.path.abspath(download_dir_relative)
 
 
 @pytest.fixture()
-def setup(browser):
+def setup(browser, wait_time=15):
+    # browser = browser.lower()  # Convert to lowercase for case-insensitivity
+    # Create the log directory if it doesn't exist
+    if not os.path.exists(download_dir):
+        os.makedirs(download_dir)
+    # Set up Common Browser options for handling file downloads
+    common_options = {
+        "download.default_directory": download_dir,
+        "download.prompt_for_download": False,
+        "download.directory_upgrade": True,
+        "safebrowsing_for_trusted_sources_enabled": True,
+        "safebrowsing.enabled": True
+    }
+    # Following have webdriver setup - Input choose browser from pytest cmd "pytest --browser chrome"
     if browser == "chrome":
-        driver = webdriver.Chrome()
+        options = ChromeOptions()
+        options.add_experimental_option("prefs", common_options)
+        driver = webdriver.Chrome(options=options)
         driver.maximize_window()
         # Implicitly wait time is 10s - This is for Common global for all elements (Dynamic performs)
-        driver.implicitly_wait(15)
+        driver.implicitly_wait(wait_time)
         print("\n" "##### Chrome Browser is launching..... #####")
         # logger.info("******* Test Cases are testing under Chrome Browser *******")
     elif browser == "firefox":
-        driver = webdriver.Firefox()
-        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
+        firefox_options = FirefoxOptions()
+        # Set preferences for file downloads
+        firefox_options.set_preference("browser.download.folderList", 2)  # 0: Desktop, 1: Downloads, 2: Custom Location
+        firefox_options.set_preference("browser.download.dir", download_dir)
+        firefox_options.set_preference("browser.download.useDownloadDir", True)
+        firefox_options.set_preference("browser.helperApps.neverAsk.saveToDisk",
+                                       "application/octet-stream")  # MIME type to auto-download
+        driver = webdriver.Firefox(options=firefox_options)
+        driver.implicitly_wait(wait_time)  # Implicitly wait time is 10 sec
         driver.maximize_window()
         print("\n" "##### Firefox Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under Firefox Browser *******")
     elif browser == "edge":
         driver = webdriver.Edge()
-        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
+        driver.implicitly_wait(wait_time)  # Implicitly wait time is 10 sec
         driver.maximize_window()
         print("\n" "##### Microsoft Edge Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under Firefox Browser *******")
     else:
-        driver = webdriver.Edge()
-        driver.implicitly_wait(15)  # Implicitly wait time is 10 sec
+        # Set preferences for file downloads (
+        """ When using this edge browser with download set dir not completed fully.
+            Getting pop-up when downloading a file, currently i can't find the fix for disable the pop-up
+            Later will update.
+            Note: Currently do not use the edge browser for downloading related test cases
+        """
+        edge_options = EdgeOptions()
+        edge_options.add_experimental_option("prefs", common_options)
+        driver = webdriver.Edge(options=edge_options)
+        driver.implicitly_wait(wait_time)  # Implicitly wait time is 10 sec
         driver.maximize_window()
         print("\n" "##### Default - Edge Browser is launching.....#####")
         # logger.info("******* Test Cases are testing under IE (Default) *******")
@@ -94,7 +131,7 @@ def pytest_html_report_title(report):
 # It is hooked for Adding Environment info to HTML Report
 @pytest.hookimpl(tryfirst=True)
 def pytest_sessionfinish(session):
-    project_name, tester = ReadConfig.test_details()    # Get Test Details from config.ini
+    project_name, tester = ReadConfig.test_details()  # Get Test Details from config.ini
     session.config.stash[metadata_key]["Project Name"] = project_name
     session.config.stash[metadata_key]["Tester"] = tester
 
