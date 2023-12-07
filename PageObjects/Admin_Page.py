@@ -25,7 +25,14 @@ class AdminPage:
     SEND_NEW_PASSWORD_XPATH = "//input[@name='newpass']"
     SEND_CONFORM_PASSWORD_XPATH = "//input[@name='confpass']"
     CLICK_APPLY_BTN_XPATH = "//input[@name='save']"
-    GET_ERROR_STATUS_TAG = "h4"
+    GET_ERROR_STATUS_TAG = "h4"  # This Element is common for all pages (It's getting status of webpage current status)
+
+    """ Below Elements for Backup/Restore """
+    CLICK_BACKUP_RESTORE_SUB_MENU_XPATH = "//*[text()='Backup/Restore']"
+    CLICK_BACKUP_BTN_XPATH = "//input[@name='save_cs']"
+    SEND_RESTORE_FILE_XPATH = "//input[@name='binary']"
+    CLICK_RESTORE_BTN_XPATH = "//input[@name='load']"
+    CLICK_RESET_BTN_XPATH = "//input[@name='reset']"
 
     def __init__(self, driver):
         self.driver = driver
@@ -86,3 +93,23 @@ class AdminPage:
 
     def get_pw_change_error_status(self):
         return self.driver.find_element(By.TAG_NAME, self.GET_ERROR_STATUS_TAG).text
+
+    """ Below Methods for Backup/Restore """
+
+    def click_backup_restore_opt(self):
+        self.driver.find_element(By.XPATH, self.CLICK_BACKUP_RESTORE_SUB_MENU_XPATH).click()
+
+    def click_backup_btn(self):
+        self.driver.find_element(By.XPATH, self.CLICK_BACKUP_BTN_XPATH).click()
+
+    def click_reset_btn(self):
+        self.driver.find_element(By.XPATH, self.CLICK_RESET_BTN_XPATH).click()
+
+    def get_status_af_reset_btn_click(self):
+        return self.driver.find_element(By.TAG_NAME, self.GET_ERROR_STATUS_TAG).text
+
+    def choose_send_backup_file(self, backup_file_path):
+        self.driver.find_element(By.XPATH, self.SEND_RESTORE_FILE_XPATH).send_keys(backup_file_path)
+
+    def click_restore_btn(self):
+        self.driver.find_element(By.XPATH, self.CLICK_RESTORE_BTN_XPATH).click()
