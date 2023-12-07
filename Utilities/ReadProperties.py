@@ -38,6 +38,15 @@ class ReadConfig:
         tester = config.get("Test_Details", "Tester")
         return project_name, tester
 
+    @staticmethod
+    def default_login_credentials():
+        conf = configparser.ConfigParser()
+        conf.read("config.ini")
+        default_url = config.get("Default_Device_Login", "Device_URL")
+        default_username = config.get("Default_Device_Login", "username")
+        default_password = config.get("Default_Device_Login", "password")
+        return default_url, default_username, default_password
+
 
 """
 # Sample Test
