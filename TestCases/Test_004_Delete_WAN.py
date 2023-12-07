@@ -13,6 +13,7 @@ class Test_004_Delete_WAN:
     password = ReadConfig.get_password()
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_delete_wan(self, setup, logger):
         self.driver = setup

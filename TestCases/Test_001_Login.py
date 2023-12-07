@@ -13,6 +13,7 @@ class Test_001_Login:
     password = ReadConfig.get_password()
 
     @pytest.mark.Sanity
+    @pytest.mark.Regression
     def test_homepage(self, setup, logger):  # Here setup is a fixtures from "/testCases/congtest.py" file
         logger.info("********************* Test_001_Login :: Test Homepage *********************")
         logger.info("******* Homepage Test case is started & Verifying *******")
@@ -43,6 +44,7 @@ class Test_001_Login:
 
     @pytest.mark.Sanity
     @pytest.mark.Regression
+    @pytest.mark.Smoke
     def test_login(self, setup, logger):  # Here setup & logger is a fixtures from "/testCases/congtest.py" file
         logger.info("********************* Test_001_Login :: Test Login *********************")
         logger.info("******* Login Test case is started & Verifying *******")

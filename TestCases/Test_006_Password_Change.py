@@ -13,6 +13,7 @@ class Test_006_Password_Change:
     password = ReadConfig.get_password()
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_password_change(self, setup, logger):
         logger.info("************* Test_006_Password_Change :: test_password_change *************")
@@ -102,6 +103,7 @@ class Test_006_Password_Change:
             assert False
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_password_change_wrong_old_password(self, setup, logger):
         logger.info("************* Test_006_Password_Change :: test_password_change_wrong_old_password *************")

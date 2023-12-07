@@ -21,7 +21,7 @@ class Test_002_Login_DDT:
 
     # Here setup & logger is a fixtures from "/testCases/congtest.py" file
     # Test-1
-    @pytest.mark.Sanity
+    @pytest.mark.Regression
     def test_login_both_username_password_valid(self, setup, logger):
         logger.info("************* Login_Test_DDT_002 :: 1-test_login_both_username_password_valid **************")
         logger.info("******* login_both_username_password_valid test case is started & Verifying *******")
@@ -56,7 +56,7 @@ class Test_002_Login_DDT:
 
     # Here setup is a fixtures from "/testCases/congtest.py" file
     # Test-2
-    @pytest.mark.Sanity
+    @pytest.mark.Regression
     def test_login_valid_username_invalid_password(self, setup, logger):
         logger.info(
             "************** Login_Test_DDT_002 :: 2-test_login_valid_username_invalid_password ***************")
@@ -99,7 +99,7 @@ class Test_002_Login_DDT:
 
     # Here setup is a fixtures from "/testCases/congtest.py" file
     # Test-3
-    @pytest.mark.Sanity
+    @pytest.mark.Regression
     def test_login_invalid_username_valid_password(self, setup, logger):
         logger.info("******* Login_Test_DDT_002 :: 3-test_login_invalid_username_valid_password *******")
         logger.info(
@@ -142,7 +142,7 @@ class Test_002_Login_DDT:
 
     # Here setup is a fixtures from "/testCases/congtest.py" file
     # Test-4
-    @pytest.mark.Sanity
+    @pytest.mark.Regression
     def test_both_username_password_invalid(self, setup, logger):
         logger.info(
             "************** Login_Test_DDT_002 :: 4-test_both_username_password_invalid ***************")

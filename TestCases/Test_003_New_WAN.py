@@ -13,6 +13,7 @@ class Test_003_New_WAN:
     password = ReadConfig.get_password()
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_add_bridge_wan_1(self, setup, logger):
         self.driver = setup
@@ -122,6 +123,7 @@ class Test_003_New_WAN:
     """
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_add_ipoe_wan_2(self, setup, logger):
         self.driver = setup
@@ -199,6 +201,7 @@ class Test_003_New_WAN:
             assert False
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_add_pppoe_wan_3(self, setup, logger):
         self.driver = setup

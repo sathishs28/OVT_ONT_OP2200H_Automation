@@ -5,10 +5,13 @@ rem Activate the virtual environment
 call venv\Scripts\activate
 
 Rem ##########  Run the pytest command  ##########
-Rem Note: You want to run Sanity or Regression... Un command the pytest cmd -> Remove "Rem"
+Rem Note: You want to run Sanity, Smoke or Regression... Un command the pytest cmd -> Remove "Rem"
 
 Rem ### Sanity Test in Chrome ###
 Rem pytest -v -s -m "Sanity" --html=Reports/report.html/ TestCases --browser chrome
+
+Rem ### Smoke Test in Chrome ###
+Rem pytest -v -s -m "Smoke" --html=Reports/report.html/ TestCases --browser chrome
 
 Rem ### Regression Test Chrome ###
 Rem pytest -v -s -m "Regression" --html=Reports/report.html/ TestCases --browser chrome

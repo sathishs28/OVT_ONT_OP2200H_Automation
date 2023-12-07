@@ -13,6 +13,7 @@ class Test_005_Add_PPPoE_WAN:
     password = ReadConfig.get_password()
 
     @pytest.mark.Sanity
+    @pytest.mark.Smoke
     @pytest.mark.Regression
     def test_add_pppoe_wan(self, setup, logger):
         self.driver = setup
@@ -91,32 +92,3 @@ class Test_005_Add_PPPoE_WAN:
             self.lp.click_logout()
             self.driver.close()
             assert False
-
-    # Below test is for internet testing and debugging purpose only
-    def test_workout(self, setup, logger):
-
-        self.driver = setup
-        self.driver.get(self.device_URL)
-        # try:
-        # Login Device
-        self.lp = LoginPage(self.driver)
-        self.lp.login(self.username, self.password)
-
-        # Navigate to WAN Page
-        self.wp = WAN_Page(self.driver)
-        self.wp.click_wan_mainmenu()
-        self.wp.click_pon_wan_submenu()
-        self.wp.switch_iframe()  # Switch to Inner frame of another HTML document
-
-        # Get WAN List
-        """
-        options = self.wp.get_wan_list()
-        print(len(options))
-        for option in options:
-            print(option.text)
-        print("Printing the last added WAN " + options[2].text)
-        """
-        logger.info("Testing Sample log generated")
-        self.driver.switch_to.default_content()
-        self.lp.click_logout()
-        self.driver.close()

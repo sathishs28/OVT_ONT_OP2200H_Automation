@@ -11,6 +11,7 @@ Requirement:
     6. allure-pytest - to generate allure reports
 
 *** For Fresh Setup in New PC ***
+Note: If already setup has done, ignore below steps 1,2, & 3. continue on step 4 & 5
 
 Step 1. Share Your Code and install Python V3.11 or a higher version & Chrome Webdriver
     1. https://github.com/sathishs28/OVT_ONT_OP2200H_Automation.git
@@ -39,7 +40,16 @@ Step 4. Run Your Python Project:
     Edit and run -> run.bat (Open the run.bat -> It's run automatically)
 
     1. Before run the automation "run.bat" configure the project and device details in Configuration (folder) - config.ini
-    2. Set the marks desired test cases (from each module - test cases)
+
+    2. Edit/modify - run.bat (Refer file)
+        Ex-1: If You want to check the new firmware automation (Use Sanity Test Automation)
+            1. Copy the new firmware file in Firmware (Folder)
+            2. Un-command and command (if already another command is there using) the sanity test case command in run.bat
+            3. Then, run the run.bat file
+        Ex-2: If you want to check already updated firmware (Use Smoke Test Automation)
+            1. Un-command and command (if already another command is there using) the sanity test case command in run.bat
+            2. Then, run the run.bat file
+
     3. After run the run.bat file with specified single cmd (there have multiple cmds based on the project test cases).
 
 Step 5: Finally, the Automation test result verifies in Reports & Logs
