@@ -3,6 +3,7 @@ import pytest
 from Utilities.ReadProperties import ReadConfig
 from PageObjects.Login_Page import LoginPage
 from PageObjects.WAN_Page import WAN_Page
+from Utilities import Excel_Utillities
 
 snap_path = "./ScreenShots/"
 
@@ -36,10 +37,10 @@ class Test_003_New_WAN:
             self.wp.select_wan("new link")  # Create New WAN Profile
             self.wp.enable_vlan()
             # time.sleep(3)
-            vlan_id = 1000
+            vlan_id = Excel_Utillities.read_data("WAN", 2, 3)
             self.wp.send_vlan_id(vlan_id)
-            self.wp.select_wan_channel_mode("Bridged")
-            self.wp.select_connection_type_bg("Other")
+            self.wp.select_wan_channel_mode(Excel_Utillities.read_data("WAN", 2, 4))
+            self.wp.select_connection_type_bg(Excel_Utillities.read_data("WAN", 2, 5))
 
             # self.wp.port_mapping()
             # Apply configuration
@@ -106,22 +107,6 @@ class Test_003_New_WAN:
             self.driver.close()
             assert False
 
-    """
-        # Below this condition for if above all cases are failed... Try to log out the webpage
-        try:
-            if self.lp.get_logout_element().is_displayed():
-                self.driver.switch_to.default_content()
-                self.lp.click_logout()
-                self.driver.close()
-                return
-            else:
-                self.lp.click_logout()
-                self.driver.close()
-                return
-        except Exception as e2:
-            print(f"Page load failed: {str(e2)}")
-    """
-
     @pytest.mark.Sanity
     @pytest.mark.Smoke
     @pytest.mark.Regression
@@ -146,10 +131,10 @@ class Test_003_New_WAN:
             self.wp.select_wan("new link")  # Create New WAN Profile
             self.wp.enable_vlan()
             # time.sleep(3)
-            vlan_id = 50
+            vlan_id = Excel_Utillities.read_data("WAN", 3, 3)
             self.wp.send_vlan_id(vlan_id)
-            self.wp.select_wan_channel_mode("IPoE")
-            self.wp.select_connection_type("INTERNET_TR069")
+            self.wp.select_wan_channel_mode(Excel_Utillities.read_data("WAN", 3, 4))
+            self.wp.select_connection_type(Excel_Utillities.read_data("WAN", 3, 5))
             # Configure WAN IP Settings
             self.wp.select_ipoe_type_dhcp()  # WAN IP Mode is DHCP
 
@@ -224,13 +209,13 @@ class Test_003_New_WAN:
             self.wp.select_wan("new link")  # Create New WAN Profile
             self.wp.enable_vlan()
             # time.sleep(3)
-            vlan_id = 200
+            vlan_id = Excel_Utillities.read_data("WAN", 4, 3)
             self.wp.send_vlan_id(vlan_id)
-            self.wp.select_wan_channel_mode("PPPoE")
-            self.wp.select_connection_type("INTERNET_TR069")
+            self.wp.select_wan_channel_mode(Excel_Utillities.read_data("WAN", 4, 4))
+            self.wp.select_connection_type(Excel_Utillities.read_data("WAN", 4, 5))
             # Configure PPP Settings
-            self.wp.send_ppp_username_name("automation@vlan200")
-            self.wp.send_ppp_password("password")
+            self.wp.send_ppp_username_name(Excel_Utillities.read_data("WAN", 4, 6))
+            self.wp.send_ppp_password(Excel_Utillities.read_data("WAN", 4, 7))
             # self.wp.send_ppp_ac_name("LAB")
             # self.wp.send_ppp_service_name("OVT")
 

@@ -3,6 +3,7 @@ import pytest
 from Utilities.ReadProperties import ReadConfig
 from PageObjects.Login_Page import LoginPage
 from PageObjects.WAN_Page import WAN_Page
+from Utilities import Excel_Utillities
 
 snap_path = "./ScreenShots/"
 
@@ -36,13 +37,13 @@ class Test_005_Add_PPPoE_WAN:
             self.wp.select_wan("new link")  # Create New WAN Profile
             self.wp.enable_vlan()
             # time.sleep(3)
-            vlan_id = 100
+            vlan_id = Excel_Utillities.read_data("WAN", 4, 3)
             self.wp.send_vlan_id(vlan_id)
-            self.wp.select_wan_channel_mode("PPPoE")
-            self.wp.select_connection_type("INTERNET_TR069")
+            self.wp.select_wan_channel_mode(Excel_Utillities.read_data("WAN", 4, 4))
+            self.wp.select_connection_type(Excel_Utillities.read_data("WAN", 4, 5))
             # Configure PPP Settings
-            self.wp.send_ppp_username_name("automation@vlan100")
-            self.wp.send_ppp_password("password")
+            self.wp.send_ppp_username_name(Excel_Utillities.read_data("WAN", 4, 6))
+            self.wp.send_ppp_password(Excel_Utillities.read_data("WAN", 4, 7))
             # self.wp.send_ppp_ac_name("LAB")
             # self.wp.send_ppp_service_name("OVT")
 

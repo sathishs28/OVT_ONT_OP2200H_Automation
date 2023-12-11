@@ -39,9 +39,9 @@ Step 3. Install Project Dependencies:
 Step 4. Run Your Python Project:
     Edit and run -> run.bat (Open the run.bat -> It's run automatically)
 
-    1. Before run the automation "run.bat" configure the project and device details in Configuration (folder) - config.ini
+    1. Before run the automation "run.bat" configure the project and device details in Configuration (folder) - config.ini & Test Data (Folder - .xlsx)
 
-    2. Edit/modify - run.bat (Refer file)
+    2. Edit/modify - run.bat (Refer file) & Data_Driven_Test.xlsx
         Ex-1: If You want to check the new firmware automation (Use Sanity Test Automation)
             1. Copy the new firmware file in Firmware (Folder)
             2. Un-command and command (if already another command is there using) the sanity test case command in run.bat
