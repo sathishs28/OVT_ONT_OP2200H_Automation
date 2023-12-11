@@ -53,3 +53,25 @@ Step 4. Run Your Python Project:
     3. After run the run.bat file with specified single cmd (there have multiple cmds based on the project test cases).
 
 Step 5: Finally, the Automation test result verifies in Reports & Logs
+
+
+### Test Case Details ###
+
+    1.Test_000_Firmware_Upgrade:
+        It's performing firmware upgrade and verify the old and new firmware version updated or not
+    2.Test_001_Login:
+        In this test case have 2 tests - Verify the home page (including logo & login button elements)
+    3.Test_002_Login_DDT:
+        In this test case have 4 tests - It's verify the login test (both +ve & -ve test cases)
+    4.Test_003_New_WAN:(Before test this, give test data in TestData folder
+        In this test case have 3 tests - Creating/Adding new WAN profiles - bridge mode, IPoE, & PPPoE
+    5.Test_004_Delete_WAN:
+        It's performing to delete the available all WAN profiles.
+    6.Test_005_Add_PPPoE_WAN:
+        Again after deleting all WAN, create a new profile for re-validation
+    7.Test_006_Password_Change:
+        It's performed and verify the Password change option in Admin page. Change current login password and set a new password
+    8.Test_007_Backup_Restore:
+        In this test case have three tests - Back-up the current configuration, Reset the current config running device, & finally restore the recently taken backup
+
+    Note: Test_Sample test case is a testing purpose
