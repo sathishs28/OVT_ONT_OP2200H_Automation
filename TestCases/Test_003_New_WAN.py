@@ -281,6 +281,8 @@ class Test_003_New_WAN:
             self.driver.close()
             assert False
 
+
+"""
     # Below test is for internet testing and debugging purpose only
     def test_workout(self, setup, logger):
 
@@ -298,14 +300,16 @@ class Test_003_New_WAN:
         self.wp.switch_iframe()  # Switch to Inner frame of another HTML document
 
         # Get WAN List
-        """
-        options = self.wp.get_wan_list()
-        print(len(options))
-        for option in options:
-            print(option.text)
-        print("Printing the last added WAN " + options[2].text)
-        """
+        
+        # options = self.wp.get_wan_list()
+        # print(len(options))
+        # for option in options:
+        #     print(option.text)
+        # print("Printing the last added WAN " + options[2].text)
+        
         logger.info("Testing Sample log generated")
         self.driver.switch_to.default_content()
         self.lp.click_logout()
         self.driver.close()
+        
+"""
