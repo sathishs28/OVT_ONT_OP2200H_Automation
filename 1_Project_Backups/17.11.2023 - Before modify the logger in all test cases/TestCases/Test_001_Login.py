@@ -1,7 +1,8 @@
 import pytest
+from Utilities.CustomLogger import LogGen
+
 from PageObjects.Login_Page import LoginPage
 from Utilities.ReadProperties import ReadConfig
-from Utilities.CustomLogger import LogGen
 
 # from selenium.webdriver.support.wait import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC

@@ -1,11 +1,13 @@
 import os
 import time
-import pytest
 from pathlib import Path
+
+import pytest
 from selenium.webdriver.common.alert import Alert
-from Utilities.ReadProperties import ReadConfig
-from PageObjects.Login_Page import LoginPage
+
 from PageObjects.Admin_Page import AdminPage
+from PageObjects.Login_Page import LoginPage
+from Utilities.ReadProperties import ReadConfig
 
 snap_path = "./ScreenShots/"
 

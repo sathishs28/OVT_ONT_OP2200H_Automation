@@ -1,7 +1,8 @@
 import pytest
+
 from PageObjects.Login_Page import LoginPage
-from Utilities.ReadProperties import ReadConfig
 from Utilities import Excel_Utillities
+from Utilities.ReadProperties import ReadConfig
 
 act_lp_title = ReadConfig.get_login_page_title()  # Actual Login page title
 act_dash_title = ReadConfig.get_dashboard_title()  # Actual dashboard title

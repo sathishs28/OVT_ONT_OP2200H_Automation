@@ -1,8 +1,9 @@
 import pytest
-from Utilities.ReadProperties import ReadConfig
-from PageObjects.Login_Page import LoginPage
-from PageObjects.Admin_Page import AdminPage
 from selenium.webdriver.common.alert import Alert
+
+from PageObjects.Admin_Page import AdminPage
+from PageObjects.Login_Page import LoginPage
+from Utilities.ReadProperties import ReadConfig
 
 snap_path = "./ScreenShots/"
 

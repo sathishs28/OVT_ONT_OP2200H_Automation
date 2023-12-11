@@ -1,10 +1,10 @@
 # import time
 import pytest
-
 from Utilities.CustomLogger import LogGen
-from Utilities.ReadProperties import ReadConfig
+
 from PageObjects.Login_Page import LoginPage
 from PageObjects.WAN_Page import WAN_Page
+from Utilities.ReadProperties import ReadConfig
 
 snap_path = "./ScreenShots/"
 

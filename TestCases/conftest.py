@@ -1,14 +1,15 @@
-import os
-import pytest
 import logging
+import os
 from datetime import datetime
-from selenium import webdriver
-from pytest_metadata.plugin import metadata_key
-from Utilities.ReadProperties import ReadConfig
-from selenium.webdriver.chrome.options import Options as ChromeOptions
-from selenium.webdriver.firefox.options import Options as FirefoxOptions
-from selenium.webdriver.edge.options import Options as EdgeOptions
 
+import pytest
+from pytest_metadata.plugin import metadata_key
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from selenium.webdriver.edge.options import Options as EdgeOptions
+from selenium.webdriver.firefox.options import Options as FirefoxOptions
+
+from Utilities.ReadProperties import ReadConfig
 
 download_dir_relative = "./Backups/"
 download_dir = os.path.abspath(download_dir_relative)

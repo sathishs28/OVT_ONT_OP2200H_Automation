@@ -1,14 +1,16 @@
 import os
 import time
+
 import pytest
 import requests
-from selenium.webdriver.common.by import By
-from PageObjects.Login_Page import LoginPage
-from PageObjects.Admin_Page import AdminPage
-from Utilities.ReadProperties import ReadConfig
 from selenium.webdriver.common.alert import Alert
-from selenium.webdriver.support.wait import WebDriverWait
+from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.wait import WebDriverWait
+
+from PageObjects.Admin_Page import AdminPage
+from PageObjects.Login_Page import LoginPage
+from Utilities.ReadProperties import ReadConfig
 
 snap_path = "./ScreenShots/"
 download_dir_relative = "./Backups/"
