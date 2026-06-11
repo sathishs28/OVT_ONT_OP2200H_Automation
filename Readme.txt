@@ -13,10 +13,10 @@ Requirement:
 *** For Fresh Setup in New PC ***
 Note: If already setup has done, ignore below steps 1,2, & 3. continue on step 4 & 5
 
-Step 1. Share Your Code and install Python V3.11 or a higher version & Chrome Webdriver
-    1. https://github.com/sathishs28/OVT_ONT_OP2200H_Automation.git
+Step 1. Clone the Code and install Python V3.11 & Chrome Webdriver
+    1. Clone url - https://github.com/sathishs28/OVT_ONT_OP2200H_Automation.git
 
-    2. And install the Python V3.11 or higher version - https://www.python.org/downloads/
+    2. Install the Python V3.11 - https://www.python.org/downloads/ or Refer the /Setup/ folder
 
     3. Download chrome webdriver with the latest version of currently running chrome in your PC
         Refer & Download link - https://chromedriver.chromium.org/downloads
@@ -31,7 +31,7 @@ Step 2. Set Up a Virtual Environment:
         python -m venv venv
 
     4. Activate the virtual environment:
-        venv\Scripts\activate
+        .\venv\Scripts\activate.bat
 
 Step 3. Install Project Dependencies:
     pip install -r requirements.txt
