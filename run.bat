@@ -20,7 +20,10 @@ Rem ### Below cmd for Testing and R&D Purposes Default browser is chrome
 Rem pytest -v -s -m "Testing" --html=Reports/report.html/ TestCases --browser chrome
 
 Rem ### Below cmd for Sample run Default browser is chrome
-pytest -v -s -m "Smoke" --html=Reports/report.html/ TestCases --browser chrome
+Rem pytest -v -s -m "Smoke" --html=Reports/report.html/ TestCases --browser chrome
+
+Rem ### Below cmd for Firmware Upgrade Test
+pytest -v -s -m "fw_upgrade" --html=Reports/report.html/ TestCases --browser chrome
 
 rem Deactivate the virtual environment
 deactivate

@@ -22,6 +22,7 @@ class Test_000_Firmware_Upgrade:
     username = ReadConfig.get_username()
     password = ReadConfig.get_password()
 
+    @pytest.mark.fw_upgrade
     @pytest.mark.Sanity
     @pytest.mark.Regression
     def test_firmware_upgrade(self, setup, logger):
